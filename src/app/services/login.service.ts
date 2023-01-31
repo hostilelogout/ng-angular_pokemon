@@ -51,7 +51,7 @@ export class LoginService {
       "x-api-key": REACT_APP_API_KEY
     });
 
-    return this.http.post<User>(ANGULAR_APP_API_URL,user {
+    return this.http.post<User>(ANGULAR_APP_API_URL,user, {
       headers
     })
   }
