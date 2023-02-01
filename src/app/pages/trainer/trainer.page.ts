@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { TestTrainer } from 'src/app/test-models/test-trainer.model';
+import { TestTrainerService } from 'src/app/test-services/test-trainer.service';
+import { TestPokemon } from 'src/app/test-models/test-pokemon.model';
 
 @Component({
   selector: 'app-profile',
@@ -7,21 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrainerPage {
 
-  /*get trainer(): Trainer {
-    return this.trainerService.user/trainer;
+  get trainer(): TestTrainer | undefined {
+    return this.testTrainerService.testTrainer;
   }
-  */
 
-  /*get caughtPokemon(): Pokemon[] {
-    if (this.trainerService.user/trainer) {
-      return this.trainerService.user/trainer.caughtPokemon;
+  get caughtPokemon(): TestPokemon[] {
+    if (this.testTrainerService.testTrainer) {
+      return this.testTrainerService.testTrainer.caughtPokemon;
     }
 
     return [];
-  }*/
+  }
 
   constructor(
-    //private trainerService: TrainerService
+    private testTrainerService: TestTrainerService
   ) { }
 
   ngOnInit(): void {
