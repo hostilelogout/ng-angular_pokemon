@@ -1,0 +1,33 @@
+.container{
+    width: 600px;
+    margin:auto;
+}
+
+.container .row button{
+    width: 50%;
+    height: 50px;
+}
+
+.content{
+    height: 600px;
+    overflow-y: auto;
+    border: solid 1px black;
+    width: 600px;
+    margin:auto;
+}
+
+.content ul li{
+    list-style: none;
+    float:left;
+    border:solid 1px red;
+    padding:10px;
+    border-radius: 25px;
+    margin:5px;
+    background-color: #ddd;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.content ul li:hover{
+    background-color: #eee;
+}

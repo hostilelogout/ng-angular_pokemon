@@ -14,6 +14,9 @@ export class PokemonApiRequestService {
   getdata(){
     const apiURL = environment.apiURL;
 
-    return this._http.get(apiURL+'pokemon/');
+
+    return this._http.get(apiURL+`pokemon?limit=10000`);
+  
+  
   }
 }
