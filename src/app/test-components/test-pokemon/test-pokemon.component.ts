@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { TestPokemon } from 'src/app/test-models/test-pokemon.model';
+import { TestPokemonService } from 'src/app/test-services/test-pokemon.service';
 
 @Component({
   selector: 'app-test-pokemon',
@@ -9,5 +10,4 @@ import { TestPokemon } from 'src/app/test-models/test-pokemon.model';
 export class TestPokemonComponent {
 
   @Input() pokemon: TestPokemon[] = [];
-
 }
