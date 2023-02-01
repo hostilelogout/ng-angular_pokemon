@@ -1,1 +1,25 @@
-<p>login-form works!</p>
+<form #createForm="ngForm" (ngSubmit)="loginSubmit(createForm)">
+    <div class=" bg-gray-200">
+        <div class="container h-screen flex justify-center items-center">
+            <div class="relative">
+                <div class="absolute top-4 left-3">
+                    <i class="fa fa-search text-gray-400 z-20 hover:text-gray-500"></i>
+                </div>
+                <input type="text" ngModel #username="ngModel" name="username" id="username" required minlength="2"
+                    class="h-14 w-96 pl-10 pr-20 rounded-lg z-0 focus:shadow focus:outline-none "
+                    placeholder="Write Username here...."/>
+                    <div *ngIf="username.errors && (username.dirty || username.touched)">
+                        <p *ngIf="username.errors['required']">Username is required</p>
+                        <p *ngIf="username.errors['minlength']">Username is to short</p>
+                    </div>
+                <div class="absolute top-2 right-2">
+                    <button type="submit"
+                        [disabled]="createForm.form.invalid"               
+                        class="h-10 w-20 text-white rounded-lg bg-red-500 hover:bg-red-600 disabled:opacity-75">
+                        Login
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

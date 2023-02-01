@@ -8,6 +8,9 @@ import { LoginPage } from './pages/login/login.page';
 import { TrainerPage } from './pages/trainer/trainer.page';
 import { PokemonCataloguePage } from './pages/pokemon-catalogue/pokemon-catalogue.page';
 import { LoginFormComponent } from './components/login-form/login-form.component';
+import { FormsModule } from '@angular/forms';
+import { LogoutFormComponent } from './components/logout-form/logout-form.component';
+import { NagivateFormComponent } from './components/nagivate-form/nagivate-form.component';
 
 @NgModule({
   declarations: [
@@ -16,10 +19,13 @@ import { LoginFormComponent } from './components/login-form/login-form.component
     TrainerPage,
     PokemonCataloguePage,
     LoginFormComponent,
+    LogoutFormComponent,
+    NagivateFormComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     HttpClientModule
   ],
   providers: [],

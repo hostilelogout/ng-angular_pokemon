@@ -1,19 +1,23 @@
 export class LocalStorage {
-    public static SaveToLocal(key: string, value: any) : void {
-        sessionStorage.setItem(key,JSON.stringify(value))
+
+    public static SaveToLocal(key: string, value: any): void {
+        sessionStorage.setItem(key, JSON.stringify(value))
     }
 
-    public static ReadFromLocal(key: string): any | null {
-        const value = sessionStorage.getItem(key);
-
+    public static ReadFromLocal(): any | undefined {
+        const value = sessionStorage.getItem(Object.keys(sessionStorage)[0])
         try {
-            if(value){
+            if (value) {
                 return JSON.parse(value) as any;
             }
-            return null;
+            return undefined;
         } catch (error) {
-            sessionStorage.removeItem(key);
-            return null;
+            this.DeleteLocal();
+            return undefined;
         }
     }
+    public static DeleteLocal() {
+        sessionStorage.clear();
+    }
+
 }
