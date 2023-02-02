@@ -1,1 +1,10 @@
-<p>trainer works!</p>
+<header class="container mx-auto p-4">
+    <h1 class="text-3xl text-white">Welcome, trainer!</h1>
+</header>
+
+<main class="container mx-auto p-4">
+    <h2 class="text-xl text-white">Here are your caught Pokémon:</h2>
+
+    <p *ngIf="loading">Loading pokemon...</p>
+    <app-test-pokemon [pokemon]="pokemon"></app-test-pokemon>
+</main>
