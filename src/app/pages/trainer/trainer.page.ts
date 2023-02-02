@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { TestTrainer } from 'src/app/test-models/test-trainer.model';
-import { TestTrainerService } from 'src/app/test-services/test-trainer.service';
+import { User } from 'src/app/models/user.model';
+import { UserService } from 'src/app/services/user.service';
+import { Pokemon } from 'src/app/models/pokemon.model';
 import { TestPokemon } from 'src/app/test-models/test-pokemon.model';
 import { TestPokemonService } from 'src/app/test-services/test-pokemon.service';
 
@@ -11,13 +12,13 @@ import { TestPokemonService } from 'src/app/test-services/test-pokemon.service';
 })
 export class TrainerPage {
 
-  get trainer(): TestTrainer | undefined {
-    return this.testTrainerService.testTrainer;
+  get trainer(): User | undefined {
+    return this.userService.User;
   }
 
-  get caughtPokemon(): TestPokemon[] {
-    if (this.testTrainerService.testTrainer) {
-      return this.testTrainerService.testTrainer.caughtPokemon;
+  get caughtPokemon(): Pokemon[] {
+    if (this.userService.User) {
+      return this.userService.User.caught;
     }
 
     return [];
@@ -39,7 +40,7 @@ export class TrainerPage {
   }
 
   constructor(
-    private testTrainerService: TestTrainerService,
+    private userService: UserService,
 
     //ONLY FOR TESTING, THIS LOGIC SHOULD HAPPEN IN PKMN CATALOGUE!!!
     private readonly testPokemonService: TestPokemonService
