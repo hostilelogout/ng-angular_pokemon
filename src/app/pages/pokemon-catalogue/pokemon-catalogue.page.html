@@ -1,1 +1,23 @@
 <p>pokemon-catalogue works!</p>
+
+
+
+<div class="container">
+    <div class="content">
+
+
+        <ul>
+            <li *ngFor="let result of displayArr; index as i;">
+                <p>nr. {{result.id}}</p>
+                <p>{{result.name}}</p>
+                <img src={{result.spriteUrl}} (error)="handleMissingImage($event)">
+            </li>
+        </ul>
+
+    </div>
+    <div class="row">
+        <button (click)="offsetChange('lower', 20)">LEFT</button>
+        <button (click)="offsetChange('increase', 20)">RIGHT</button>
+    </div>
+
+</div>
