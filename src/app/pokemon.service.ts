@@ -54,10 +54,9 @@ export class PokemonService {
 
       
     this.http.patch(ANGULAR_APP_API_URL + `/${user.id}`, {
-      Pokemon: [
-        {...userFromApi.Pokemon},
-        pokemon
-      ]
+      Pokemon: 
+        [...userFromApi.Pokemon,         pokemon        ]
+      
     }, {
       headers
     }).subscribe(() => {
