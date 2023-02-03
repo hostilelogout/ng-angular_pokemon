@@ -15,6 +15,8 @@ export class PokemonCataloguePage {
   displayArr: any = [];
   offset: number = 0;
   placeholder: string = 'https://via.placeholder.com/96';
+  showModal = false;
+  selectedPokemon: any;
 
   constructor(private _apiservice: PokemonApiRequestService) { }
 
@@ -30,6 +32,14 @@ export class PokemonCataloguePage {
     }
     this.displayArr = this.pokeArr.slice(this.offset, this.offset + 20);
   };
+
+
+  openModal(pokemon:any) {
+
+    this.selectedPokemon = pokemon;
+    this.showModal = true;
+    console.log(pokemon);
+  }
 
 
   ngOnInit() {
@@ -57,7 +67,11 @@ export class PokemonCataloguePage {
         this.displayArr = this.pokeArr.slice(this.offset, this.offset + 20);
       })
     }
+
+    
   }
+
+
 
 
 }

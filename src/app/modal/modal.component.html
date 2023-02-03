@@ -1,0 +1,9 @@
+<div class="modal-overlay" *ngIf="selectedPokemon">
+    <div class="modal-content">
+      <h3>{{selectedPokemon.name}}</h3>
+      <img src={{selectedPokemon.spriteUrl}}>
+      <p>{{selectedPokemon.description}}</p>
+      <button (click)="catchPokemon()">Catch</button>
+      <button (click)="closeModal()">Close</button>
+    </div>
+  </div>

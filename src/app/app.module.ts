@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { LogoutFormComponent } from './components/logout-form/logout-form.component';
 import { NagivateFormComponent } from './components/nagivate-form/nagivate-form.component';
 import { TestPokemonComponent } from './test-components/test-pokemon/test-pokemon.component';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { TestPokemonComponent } from './test-components/test-pokemon/test-pokemo
     LogoutFormComponent,
     NagivateFormComponent,
     TestPokemonComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,

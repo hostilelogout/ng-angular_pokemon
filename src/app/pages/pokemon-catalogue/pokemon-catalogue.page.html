@@ -11,8 +11,10 @@
                 <p>nr. {{result.id}}</p>
                 <p>{{result.name}}</p>
                 <img src={{result.spriteUrl}} (error)="handleMissingImage($event)">
+                <button (click)="openModal(result)">Details</button>
             </li>
         </ul>
+        <app-modal *ngIf="showModal" [selectedPokemon]="selectedPokemon"></app-modal>
 
     </div>
     <div class="row">
