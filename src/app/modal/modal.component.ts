@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Pokemon } from '../models/pokemon.model'
-import { UserService } from '../services/user.service'
+import { PokemonService } from '../pokemon.service'
 
 @Component({
   selector: 'app-modal',
@@ -11,12 +11,12 @@ export class ModalComponent {
   @Input() selectedPokemon: any;
   pokemon: Pokemon;
 
-  constructor(private userService: UserService,) {
+  constructor(private pokemonService: PokemonService,) {
     this.pokemon = {} as Pokemon;
   }
 
   catchPokemon() {
-    this.userService.catchPokemon(this.selectedPokemon);
+    this.pokemonService.catchPokemon(this.selectedPokemon);
   }
 
   closeModal() {
