@@ -35,10 +35,8 @@ export class PokemonCataloguePage {
 
 
   openModal(pokemon:any) {
-
     this.selectedPokemon = pokemon;
     this.showModal = true;
-    console.log(pokemon);
   }
 
 
