@@ -10,16 +10,23 @@ import { PokemonService } from '../pokemon.service'
 export class ModalComponent {
   @Input() selectedPokemon: any;
   pokemon: Pokemon;
+  captureStatus = 'preCapture';
+
 
   constructor(private pokemonService: PokemonService,) {
     this.pokemon = {} as Pokemon;
   }
 
   catchPokemon() {
-    this.pokemonService.catchPokemon(this.selectedPokemon);
+    this.pokemonService.catchPokemon(this.selectedPokemon)
+    this.captureStatus = 'postCapture';
+    console.log(this.captureStatus);
+  
   }
 
   closeModal() {
     this.selectedPokemon = null;
+    this.captureStatus = 'preCapture';
+
   }
 }
