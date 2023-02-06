@@ -12,6 +12,7 @@ const { ANGULAR_APP_API_URL, REACT_APP_API_KEY } = environment;
 @Injectable({
   providedIn: 'root'
 })
+// defines how logic for handling a login to the website. as well as containing logic if no user exist to create a new user.
 export class LoginService {
 
   constructor(
@@ -31,14 +32,14 @@ export class LoginService {
       )
    }
 
-  // check to see if user exist
+  // defines functionality for checking if a user exist with the supplied environment key and username that is shared with a observable<User>
   private checkUser(username: string): Observable<User | undefined> {
     return this.http.get<User[]>(`${ANGULAR_APP_API_URL}?username=${username}`)
       .pipe(
         map((response: User[]) => response.pop())
       )
   }
-
+  // defines functionality for creating a user. and then posting to the server.
   private createUser(username: string): Observable<User> {
     const user = {
       username,

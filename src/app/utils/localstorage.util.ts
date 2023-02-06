@@ -1,7 +1,7 @@
+// defines functionality for storing data in session storage. 
 export class LocalStorage {
 
     public static SaveToLocal(key: string, value: any): void {
-        console.log('key: ', key, "value: ", value)
         sessionStorage.setItem(key, JSON.stringify(value))
     }
 

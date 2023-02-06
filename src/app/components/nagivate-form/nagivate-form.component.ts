@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -7,6 +6,8 @@ import { UserService } from 'src/app/services/user.service';
   templateUrl: './nagivate-form.component.html',
   styleUrls: ['./nagivate-form.component.css']
 })
+
+// defines paths that can be navigated through.
 export class NagivateFormComponent {
 
   paths = [
@@ -15,7 +16,6 @@ export class NagivateFormComponent {
   ];
   constructor(
     public readonly userService: UserService,
-    private readonly router: Router,
   ) { }
 
 }
