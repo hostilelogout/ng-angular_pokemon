@@ -19,11 +19,16 @@ export class ModalComponent {
 
   catchPokemon() {
     this.pokemonService.catchPokemon(this.selectedPokemon)
-    this.captureStatus = 'postCapture';
-    setTimeout(() => {
-      this.selectedPokemon = null;
-    }, 1000);
-  
+      .then(() => {
+        this.captureStatus = 'postCapture';
+        setTimeout(() => {
+          this.selectedPokemon = null;
+          this.captureStatus = 'preCapture';
+        }, 2000);
+      })
+      .catch(error => {
+        console.error(error)
+      });
   }
 
   closeModal() {
