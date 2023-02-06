@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { map,switchMap,of } from 'rxjs';
 import { environment } from 'src/environments';
 import { User } from '../models/user.model';
+import { HeadersService } from './headers.service';
 
 
 const { ANGULAR_APP_API_URL, REACT_APP_API_KEY } = environment;
@@ -13,7 +14,10 @@ const { ANGULAR_APP_API_URL, REACT_APP_API_KEY } = environment;
 })
 export class LoginService {
 
-  constructor(private readonly http: HttpClient) { }
+  constructor(
+    private readonly http: HttpClient,
+    private readonly headerService: HeadersService
+    ) { }
 
   public login(username: string): Observable<User> {
       return this.checkUser(username)
@@ -41,10 +45,7 @@ export class LoginService {
       Pokemon: []
     };
 
-    const headers = new HttpHeaders ({
-      "Content-Type": "application/json",
-      "x-api-key": REACT_APP_API_KEY
-    });
+    const headers = this.headerService.createHeader(REACT_APP_API_KEY)
 
     return this.http.post<User>(ANGULAR_APP_API_URL,user, {
       headers
