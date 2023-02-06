@@ -4,6 +4,8 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
+
+// defines a service to create a header. and returns it with the supplied key.
 export class HeadersService {
 
   constructor() { }
