@@ -9,8 +9,10 @@ import { UserService } from 'src/app/services/user.service';
   templateUrl: './login-form.component.html',
   styleUrls: ['./login-form.component.css']
 })
+// defines what happens when user click the login button
 export class LoginFormComponent {
 
+  // outputs a event to the login page
   @Output() login: EventEmitter<void> = new EventEmitter()
 
   constructor(

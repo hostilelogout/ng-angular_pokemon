@@ -8,6 +8,7 @@ import { UserService } from 'src/app/services/user.service';
   templateUrl: './logout-form.component.html',
   styleUrls: ['./logout-form.component.css']
 })
+// defines how logout should be handled and applied when clicking a logout button
 export class LogoutFormComponent {
 
   constructor(
