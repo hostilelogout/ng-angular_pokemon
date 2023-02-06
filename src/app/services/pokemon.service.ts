@@ -47,11 +47,9 @@ export class PokemonService {
   
     const user = LocalStorage.ReadFromLocal();
 
-    console.log("getCurrentUserLocalStorage: ", user);
 
     user.pokemon = [...user.pokemon, pokemon];
-    
-  
+      
     this.http.patch(ANGULAR_APP_API_URL + `/${user.id}`, {
       pokemon: user.pokemon
     }, {

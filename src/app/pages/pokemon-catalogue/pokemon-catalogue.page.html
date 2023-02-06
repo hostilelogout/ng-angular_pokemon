@@ -1,7 +1,3 @@
-<p>pokemon-catalogue works!</p>
-
-
-
 <div class="container">
     <div class="content">
 
@@ -18,8 +14,8 @@
 
     </div>
     <div class="row">
-        <button (click)="offsetChange('lower', 20)">LEFT</button>
-        <button (click)="offsetChange('increase', 20)">RIGHT</button>
+        <button *ngIf="offset != 0" class="pagination backPagination" (click)="offsetChange('lower', 20)">LEFT</button>
+        <button class="pagination forwardPagination float-right"  (click)="offsetChange('increase', 20)">RIGHT</button>
     </div>
 
 </div>
