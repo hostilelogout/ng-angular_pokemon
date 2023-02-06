@@ -89,6 +89,7 @@ export class PokemonService {
       headers
     }).subscribe(() => {
       LocalStorage.SaveToLocal(user?.username!,user!);
+      window.location.reload();
       console.log("Pokemon Released");
     });
   }
