@@ -8,6 +8,7 @@ import { Pokemon } from 'src/app/models/pokemon.model';
   templateUrl: './trainer.page.html',
   styleUrls: ['./trainer.page.css']
 })
+
 export class TrainerPage {
 
   get trainer(): User | undefined {
@@ -19,7 +20,6 @@ export class TrainerPage {
       console.log(this.userService.User.pokemon)
       return this.userService.User.pokemon
     }
-
     return [];
   }
 
@@ -27,7 +27,11 @@ export class TrainerPage {
     private userService: UserService,
   ) { }
 
-  ngOnInit(): void {
+  public releasePokemon = () =>
+  {
+    
+  }
 
+  ngOnInit(): void {
   }
 }
