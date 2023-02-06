@@ -60,7 +60,7 @@ export class PokemonService {
     }, {
       headers
     }).subscribe(() => {
-      console.log("  // handle the successful response");
+      console.log("Pokemon Captured");
     });
       
   }
