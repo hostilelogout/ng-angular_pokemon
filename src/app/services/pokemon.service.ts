@@ -47,7 +47,7 @@ export class PokemonService {
 // here we catch poke, by sending along the pokemon object, then we patch it to the user that is logged in through their id.
 // we get the user from LocalStorage, as they are logged in.
   public catchPokemon = async (pokemon: any) => {
-    const headers = this.headerService.createHeader(ANGULAR_APP_API_URL);
+    const headers = this.headerService.createHeader(REACT_APP_API_KEY);
   
     //gets user from localstorage
     const user = LocalStorage.ReadFromLocal();
