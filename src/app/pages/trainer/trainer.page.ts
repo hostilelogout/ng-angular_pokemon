@@ -20,7 +20,6 @@ export class TrainerPage {
   //Extracting the caught Pokemon of the current user
   get caughtPokemon(): Pokemon[] {
     if (this.userService.User) {
-      console.log(this.userService.User.pokemon)
       return this.userService.User.pokemon
     }
     return [];
@@ -33,9 +32,13 @@ export class TrainerPage {
 
   //Logic behind releasing Pokemon should be done in Pokemon Service
   public releasePokemon = (pokemon: any) => {
-    this.pokemonService.releasePokemon(pokemon)
+    this.pokemonService.releasePokemon(pokemon);
+
+
   };
 
+
+ 
   ngOnInit(): void {
   }
 }
