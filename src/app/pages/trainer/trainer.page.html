@@ -8,6 +8,6 @@
         before you have to scroll than in any of the actual games' Pokedexes-->
         <p><b>No. {{singlePokemon.id}}</b>: {{singlePokemon.name}}</p>
         <img src={{singlePokemon.spriteUrl}}>
-        <button (click)="releasePokemon">Release</button>
+        <button (click)="releasePokemon(singlePokemon)">Release</button>
     </div>
 </main>

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models/user.model';
 import { UserService } from 'src/app/services/user.service';
 import { Pokemon } from 'src/app/models/pokemon.model';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { PokemonService } from 'src/app/services/pokemon.service';
 
 @Component({
   selector: 'app-profile',
@@ -28,11 +28,12 @@ export class TrainerPage {
 
   constructor(
     private userService: UserService,
+    private pokemonService: PokemonService
   ) { }
 
-  //Logic behind releasing Pokemon
-  public releasePokemon = async (pokemon: any) => {
-
+  //Logic behind releasing Pokemon should be done in Pokemon Service
+  public releasePokemon = (pokemon: any) => {
+    this.pokemonService.releasePokemon(pokemon)
   };
 
   ngOnInit(): void {

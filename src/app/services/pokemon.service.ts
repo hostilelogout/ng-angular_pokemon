@@ -65,6 +65,35 @@ export class PokemonService {
     });
   };
 
+  public releasePokemon = async (pokemon: any) => {
+
+    const headers = new HttpHeaders({
+      "Content-Type": "application/json",
+      "x-api-key": REACT_APP_API_KEY
+    });
+
+    const user = LocalStorage.ReadFromLocal();
+
+    for (let i = 0; i < user.pokemon.length; i++)
+    {
+      if (user.pokemon[i] === pokemon[i]) {
+
+        user.pokemon.splice(i, 1);
+        console.log("Hello")
+
+      }
+    }
+
+    this.http.patch(ANGULAR_APP_API_URL + `/${user.id}`, {
+      pokemon: user.pokemon
+    }, {
+      headers
+    }).subscribe(() => {
+      LocalStorage.SaveToLocal(user?.username!,user!);
+      console.log("Pokemon Released");
+    });
+  }
+
 }
 
 
