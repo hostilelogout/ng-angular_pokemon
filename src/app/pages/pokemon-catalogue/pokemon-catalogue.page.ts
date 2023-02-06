@@ -1,5 +1,5 @@
 import { Component, OnChanges } from '@angular/core';
-import { PokemonApiRequestService } from '../../pokemon-api-request.service';
+import { PokemonApiRequestService } from '../../services/pokemon-api-request.service';
 
 
 @Component({

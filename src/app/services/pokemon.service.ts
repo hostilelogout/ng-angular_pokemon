@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments';
-import { User } from '../app/models/user.model';
-import { LocalStorage } from './utils/localstorage.util';
+import { User } from '../../app/models/user.model';
+import { LocalStorage } from '../utils/localstorage.util';
 
 
 const { ANGULAR_APP_API_URL, REACT_APP_API_KEY } = environment;
