@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Pokemon } from '../models/pokemon.model'
-import { PokemonService } from '../pokemon.service'
+import { PokemonService } from '../services/pokemon.service'
 
 @Component({
   selector: 'app-modal',
