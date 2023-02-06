@@ -10,7 +10,7 @@ export class PokemonApiRequestService {
   constructor(private _http:HttpClient) { }
 
   
-
+  // here we get the data on all the pokemons off the api.
   getdata(){
     const apiURL = environment.POKEMON_API_URL;
 

@@ -3,6 +3,7 @@
 
 
         <ul>
+            <!-- here we use angular to loop through displayArr to print out pokemons-->
             <li *ngFor="let result of displayArr; index as i;">
                 <p>nr. {{result.id}}</p>
                 <p>{{result.name}}</p>
@@ -10,10 +11,13 @@
                 <button (click)="openModal(result)">Details</button>
             </li>
         </ul>
+
+        <!-- here setup the modal, and check if its True, if so display it-->
         <app-modal *ngIf="showModal" [selectedPokemon]="selectedPokemon"></app-modal>
 
     </div>
     <div class="row">
+        <!-- here we check if the offset is 0, if it is we dont display the button to lower the offset-->
         <button *ngIf="offset != 0" class="pagination backPagination" (click)="offsetChange('lower', 20)">LEFT</button>
         <button class="pagination forwardPagination float-right"  (click)="offsetChange('increase', 20)">RIGHT</button>
     </div>

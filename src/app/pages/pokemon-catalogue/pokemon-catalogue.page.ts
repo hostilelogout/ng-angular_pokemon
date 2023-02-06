@@ -41,26 +41,32 @@ export class PokemonCataloguePage {
 
 
   ngOnInit() {
+    //we setup sessionData for pokeArr to have a place to store all the pokemons
     const sessionData = sessionStorage.getItem("pokeArr");
 
     if (sessionData) {
+      // if sessionData just grab the array and display a slice
       this.pokeArr = JSON.parse(sessionData);
       this.displayArr = this.pokeArr.slice(this.offset, this.offset + 20);
     } else {
+      // go get the data from the api
       this._apiservice.getdata().subscribe(res => {
         this.newdata = res;
         this.spriteBaseUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
         this.spriteType = ".png";
 
+        //shove the data into an array
         Object.keys(this.newdata.results).forEach(key => {
           const id = Number(key) + 1;
+          //make it so it disregards pokemons with id +10000 as those are irrelevant, as its special forms or the like.
           if (((this.newdata.results[key].url).replace('https://pokeapi.co/api/v2/pokemon/', '')).replace('/', '') > 10000) {
             console.log(((this.newdata.results[key].url).replace('https://pokeapi.co/api/v2/pokemon/', '')).replace('/', ''));
           } else {
             this.pokeArr.push({ id: (id), name: this.newdata.results[key].name, spriteUrl: (this.spriteBaseUrl + (id) + this.spriteType) })
           }
         })
-        console.log("pokeArr: ", this.pokeArr);
+        
+        //set the sessionStorage pokeArr to the stuff we got
         sessionStorage.setItem("pokeArr", JSON.stringify(this.pokeArr));
         this.displayArr = this.pokeArr.slice(this.offset, this.offset + 20);
       })
