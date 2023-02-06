@@ -76,11 +76,9 @@ export class PokemonService {
 
     for (let i = 0; i < user.pokemon.length; i++)
     {
-      if (user.pokemon[i] === pokemon[i]) {
-
+      if (user.pokemon[i].id === pokemon.id) {
         user.pokemon.splice(i, 1);
         console.log("Hello")
-
       }
     }
 
