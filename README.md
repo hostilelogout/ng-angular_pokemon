@@ -26,8 +26,4 @@ My other coffee cup, for not being my first coffee cup.
 
 ## Project Status
 
-Oh dear lord.
-
-Please Sean.
-
-Go easy on us.
+Live site : https://ng-angular-pokemon.vercel.app/
