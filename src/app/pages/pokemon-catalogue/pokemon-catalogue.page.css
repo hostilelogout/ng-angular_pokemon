@@ -1,5 +1,5 @@
 .container{
-    width: 600px;
+    width: 645px;
     margin:auto;
 }
 
@@ -11,15 +11,16 @@
 .content{
     height: 600px;
     overflow-y: auto;
-    border: solid 1px black;
-    width: 600px;
+    border: solid 1px #14B8A6;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
     margin:auto;
 }
 
 .content ul li{
     list-style: none;
     float:left;
-    border:solid 1px red;
+    border:solid 1px #14B8A6;
     padding:10px;
     border-radius: 25px;
     margin:5px;
@@ -30,4 +31,13 @@
 
 .content ul li:hover{
     background-color: #eee;
+}
+
+.pagination{
+    border: solid 1px #15675d;
+    background-color: #14B8A6;
+}
+
+.pagination:hover{
+    background-color: #1cffe4;
 }
