@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments';
 import { User } from '../../app/models/user.model';
 import { LocalStorage } from '../utils/localstorage.util';
+import { HeadersService } from './headers.service';
 
 
 const { ANGULAR_APP_API_URL, REACT_APP_API_KEY } = environment;
@@ -13,7 +14,10 @@ const { ANGULAR_APP_API_URL, REACT_APP_API_KEY } = environment;
 })
 export class PokemonService {
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private readonly headerService: HeadersService
+    ) { }
 
   private user?: User
 
@@ -43,10 +47,7 @@ export class PokemonService {
 // here we catch poke, by sending along the pokemon object, then we patch it to the user that is logged in through their id.
 // we get the user from LocalStorage, as they are logged in.
   public catchPokemon = async (pokemon: any) => {
-    const headers = new HttpHeaders({
-      "Content-Type": "application/json",
-      "x-api-key": REACT_APP_API_KEY
-    });
+    const headers = this.headerService.createHeader(ANGULAR_APP_API_URL);
   
     //gets user from localstorage
     const user = LocalStorage.ReadFromLocal();
