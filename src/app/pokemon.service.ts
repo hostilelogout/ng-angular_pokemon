@@ -50,11 +50,12 @@ export class PokemonService {
     console.log("getCurrentUserLocalStorage: ", user);
 
 
-    user.pokemon = [...user.pokemon, pokemon];
-  
+    user.Pokemon = [...user.Pokemon, pokemon];
+    
+    console.log(user.Pokemon)
   
     this.http.patch(ANGULAR_APP_API_URL + `/${user.id}`, {
-      pokemon: user.pokemon
+      pokemon: user.Pokemon
     }, {
       headers
     }).subscribe(() => {
