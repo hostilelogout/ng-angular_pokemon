@@ -16,7 +16,7 @@ export class TrainerPage {
 
   get caughtPokemon(): Pokemon[] {
     if (this.userService.User) {
-      return this.userService.User.caught;
+      return this.userService.User.pokemon;
     }
 
     return [];

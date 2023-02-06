@@ -39,31 +39,29 @@ export class PokemonService {
   };
   
 
-
   public catchPokemon = async (pokemon: any) => {
     const headers = new HttpHeaders({
       "Content-Type": "application/json",
       "x-api-key": REACT_APP_API_KEY
     });
-
+  
     const user = LocalStorage.ReadFromLocal();
 
-    const userFromApi = await this.getPokemons(user.id);
+    console.log("getCurrentUserLocalStorage: ", user);
 
-    console.log("userfromapi: ",userFromApi.Pokemon);
 
-      
+    user.pokemon = [...user.pokemon, pokemon];
+  
+  
     this.http.patch(ANGULAR_APP_API_URL + `/${user.id}`, {
-      Pokemon: 
-        [...userFromApi.Pokemon,         pokemon        ]
-      
+      pokemon: user.pokemon
     }, {
       headers
     }).subscribe(() => {
+      LocalStorage.SaveToLocal(user?.username!,user!);
       console.log("Pokemon Captured");
     });
-      
-  }
+  };
 
 }
 
