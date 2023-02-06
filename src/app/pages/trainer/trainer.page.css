@@ -1,0 +1,18 @@
+.pokemonCard{
+    border:solid 1px #14B8A6;
+    width: 200px;
+    height: 200px;
+    border-radius:25px;
+}
+
+.pokemonCard button{
+    border:solid 1px #14B8A6;
+    padding:5px;
+    border-radius:25px;
+    width: 100%;
+}
+
+.pokemonCard button:hover{
+    border:solid 1px #14B8A6;
+    background-color:#14B8A6 ;
+}
