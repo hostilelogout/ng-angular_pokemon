@@ -27,3 +27,7 @@ My other coffee cup, for not being my first coffee cup.
 ## Project Status
 
 Live site : https://ng-angular-pokemon.vercel.app/
+
+## Figma Component tree
+
+![image](https://user-images.githubusercontent.com/6428939/217067183-752654c7-25b1-4559-901c-f721f3ca2e8c.png)
