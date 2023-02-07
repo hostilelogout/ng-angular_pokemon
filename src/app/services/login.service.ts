@@ -43,7 +43,7 @@ export class LoginService {
   private createUser(username: string): Observable<User> {
     const user = {
       username,
-      Pokemon: []
+      pokemon: []
     };
 
     const headers = this.headerService.createHeader(REACT_APP_API_KEY)
